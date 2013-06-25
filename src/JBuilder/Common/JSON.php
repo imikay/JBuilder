@@ -76,7 +76,11 @@ class JSON implements \JsonSerializable
         foreach ($collection as $element) {
             $json = new JSON();
             $callback($json, $element);
-            $result[] = $json;
+            
+            if ($json != null)
+            {
+                $result[] = $json;
+            }
         }
 
         return $result;
